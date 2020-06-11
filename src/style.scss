@@ -1,0 +1,72 @@
+$shadow:  0 3.2px 7.2px 0 rgba(0,0,0,.132), 0 0.6px 1.8px 0 rgba(0,0,0,.108);
+
+* {
+    font-family: Lato;
+}
+
+body {
+    background-color: darken($color: #fff, $amount: 5);
+}
+
+.align {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.callout {
+    margin-top: 0.3rem;
+    position: absolute;
+    width: 50vw;
+    background-color: #fff;
+    box-shadow: $shadow;
+    overflow: hidden;
+    border-radius: 0.3rem;
+}
+
+.dropdown {
+    margin-top: 2rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: none;
+    width: 50vw;
+    border-radius: 0.3rem;
+    box-shadow: $shadow;
+}
+
+.divdown-container {
+    @extend .dropdown;
+    padding: 0;
+    background-color: #fff;
+}
+
+.divdown {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divoption {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem;
+    color: #484848;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.divoption:hover {
+    background-color: #e7e7e7;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}

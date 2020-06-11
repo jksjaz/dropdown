@@ -1,17 +1,49 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import Hello from './Hello';
+import Dropdown from './Dropdown/Dropdown';
+import DivDown from './DivDown/DivDown'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import './style.scss';
+import "@fortawesome/fontawesome-free/css/all.css"
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+interface AppState {
+  name: string;
+}
+
+const data = [
+  {
+    id: 0,
+    title: "1"
+  },
+  {
+    id: 1,
+    title: "2"
+  },
+  {
+    id: 2,
+    title: "3"
+  }
+]
+
+class App extends Component<any, AppState> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      name: 'React'
+    };
+  }
+
+  render() {
+    return (
+      <div className="align">
+        <Hello name={this.state.name} />
+        <small className="text-center">As option style is controlled by OS <br/> I created both select and div based Dropdowns!</small>
+        <Dropdown data={data}/>
+        <DivDown data={data}/>
+      </div>
+    );
+  }
+}
+
+render(<App />, document.getElementById('root'));
